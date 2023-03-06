@@ -5,24 +5,32 @@
 
 body {
     font-family: 'Merriweather', serif;
-    background-color: #F9FAFC;
+    background-color: #ebf2ff;
+    transition: 0.5ms;
 }
 
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content:space-between;
+    background-color: #fff;
 }
 
 .navbar__brand {
     width: 100px;
+    
 }
 
 .navbar__logo {
     width: 100%;
+    
 }
 
-.nav__item {
+.navbar__nav__item1 {
+    padding-right: 5px;
+}
+
+.button__primary {
     background-image: linear-gradient(to right,
     #ff512f 0%,
     #dd2476 51%,
@@ -33,8 +41,6 @@ body {
     border-radius: 13px;
     font-weight: 600;
 
-    display: inline-block;
-  vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -45,17 +51,93 @@ body {
 }
 
 
-.nav__item:hover, .nav__item:focus, .nav__item:active {
+.button__primary:hover, .button__primary:focus, .button__primary:active {
     border-radius: 1em;
     cursor: pointer;
     background-image: linear-gradient(to right,
-    #ff512f 0%,
-    #dd2476 100%);
+    #dd2476 0%,#ff512f 100%
+    );
     color: #fff;
-  }
+    transition-duration: 0.5ms;
+}
 
-.nav__item:hover {
-    background-position: right center;
+.container {
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+
+}
+
+
+
+
+
+.hero__image__conatiner {
+    width: 100%;
+    position: relative;
+}
+
+.hero__image {
+    position: absolute;
+    width: 100%;
+    left: auto;
+    right: auto;
+    border-radius: 8px;
+    z-index: 3;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    margin-top: 7%;
+}
+
+
+
+.hero__shape {
+    position: absolute;
+    right: 2;
+    z-index: 1;
+
+}
+
+.hero__description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.hero__text {
+    font-size: 36px;
+    margin: 20px 0;
+    color: #1d3557;
+    font-weight: 800;
+}
+
+.food__card{
+    background-color: #f9f9f9;
+    margin-top: 10px;
+    border-radius: 8px;
+    
+}
+
+.food__card__image {
+    width: 100%;
+}
+
+.food__image {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.food__card__description {
+    padding: 15px;
+}
+
+.explore__menu__text {
+    padding-bottom: 20px;
+    padding-top: 30px;
+    text-align: center;
+    size: 30px;
+    color: #1d3557;
+    font-weight: 800;
 }
 
 @media (min-width: 768px) {
@@ -63,15 +145,94 @@ body {
         justify-content: space-between;
         padding: 10px 30px;
     }
+
+    .hero__container {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding: 20px;
+        
+    }
+
+
+    .explore__menu__lists {
+        padding:  25px;
+        display: flex;
+        gap: 15px;
+        
+    }
+
+    #pizza__card {
+        margin-top: -20px;
+        margin-bottom: 30px;
+
+    }
+
+    .explore__menu__container {
+        position: relative;
+    }
+
+    .explore__menu__gradient {
+        
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to right,
+        #ff512f 0%,
+        #dd2476 51%,
+        #ff512f 100%);
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transform: skewY(-3.8deg);
+
+    }
+
+    .explore__menu__container {
+        position: relative;
+    }
+
+    #icecream__card {
+        margin-bottom: 15px;
+    }
 }
 
 @media (min-width: 1024px) {
+
+    .explore__menu__lists {
+        padding-top: 30px;
+        gap: 25px;
+    }
+
+    .explore__menu__text {
+        font-size: 44px;
+    }
+
+    .hero__container {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .container {
+        max-width: 80%;
+    }
     .navbar__brand{
         width: 150px;
     }
 
-    .nav__item{
+    .button__primary{
         padding: 20px;
         font-size: 20px;
+    }
+
+    .hero__text {
+        font-size: 44px;
+    }
+
+    .hero__description {
+        width: 100%;
     }
 }
